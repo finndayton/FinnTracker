@@ -5,7 +5,7 @@ basic BTC wallets viewer
 
 First, in the webapp directory, install npm with your preferred package manager.
 
-The, install dependencies:
+Then, install dependencies:
 
 ### `npm install`
 
