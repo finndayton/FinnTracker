@@ -24,7 +24,6 @@ const addNewAddress = (event) => {
   event.preventDefault();
   const address = event.target.address.value;
   const valid = checkBase58(address) || checkbech32(address);
-  console.log(`user just attempted to add wallet ${address}. This address is ${valid ? "valid" : "invalid"}`)
   
   if (address.length == 0){
     alert("Please enter a Bitcoin wallet address below.");
@@ -77,7 +76,6 @@ const fetchAddressInfo = (address) => {
       response => {
         const btc_amount = response.data[`${address}`] * 10e-9;
         if (isNaN(btc_amount)) btc_amount = 0;
-        console.log(`Address ${address} currently holds ${btc_amount} BTC`)
         const new_balances = {...balances, [address]: btc_amount};
         setBalances(new_balances);     
       }
@@ -85,13 +83,10 @@ const fetchAddressInfo = (address) => {
 }
 
 const updateBalance = (event) => {
-  console.log("balances = ", balances);
-  console.log("event = ", event);
   fetch("https://api.blockchair.com/bitcoin/stats")
   .then(response => response.json())
   .then(response => {
     const btc_price = response.data.market_price_usd;
-    console.log("btc_price = ", btc_price);
     updateValue(btc_price);
     }
    );
@@ -99,21 +94,15 @@ const updateBalance = (event) => {
 
 const updateValue = (btc_price) => {
   let new_value = 0;
-
   wallets.forEach(wallet => new_value += balances[wallet] * btc_price);
-  // console.log("new value = ", new_value);
   setValue(new_value.toFixed(2));
-  console.log(value);
 }
 
 const removeAddress = (address) => {
   //remove address
-  console.log("attempting to remove address ", address);
   const new_wallets = wallets;  
   const index = new_wallets.indexOf(address);
-  console.log(`index = ${index}`);
   new_wallets.splice(index, 1)
-  console.log(`old wallets: ${wallets}, new wallets: ${new_wallets}`)
   setWallets([...new_wallets])
 }
 

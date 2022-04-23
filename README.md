@@ -1,5 +1,19 @@
 # FinnTracker
-basic BTC wallets viewer
+Basic BTC wallet viewer
+
+Functionality: 
+
+<ul>
+  <li>Simple UI / UX written in React using Next.js you can run locally.</li>
+  <li> Add / Remove BTC wallet addresses</li>
+    <ul>
+      <li>Enforce valid addresses</li>
+      <li>Enforce unique addresses</li>
+    </ul>
+  </li>
+  <li>Ability to refresh the sum total in USD of BTC held in all wallets.</li>
+</ul>
+
 
 # Running Next.js webapp
 

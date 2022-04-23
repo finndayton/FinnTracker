@@ -1,3 +1,5 @@
+//Full credit for this function goes to account lz96 at https://stackoverflow.com/questions/21559851/bitcoin-address-form-validation-javascript-and-php
+
 import CryptoJS from 'crypto-js'
 import sha256 from 'crypto-js/sha256'
 
