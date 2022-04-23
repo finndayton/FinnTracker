@@ -1,7 +1,7 @@
 # FinnTracker
 Basic BTC wallet viewer
 
-Functionality: 
+# Functionality: 
 
 <ul>
   <li>Simple UI / UX written in React using Next.js you can run locally.</li>
@@ -14,6 +14,10 @@ Functionality:
   <li>Ability to refresh the sum total in USD of BTC held in all wallets.</li>
 </ul>
 
+
+# Next Steps
+
+Add new page when users click on a wallet. This page displays amount of BTC, current dollar value of this BTC, and a list of transactions involving this wallet address.
 
 # Running Next.js webapp
 
